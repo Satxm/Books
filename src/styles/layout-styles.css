@@ -5,6 +5,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     animation: banner-fadeInUp 1s ease-out;
     font-weight: bold;
+    font-family: 'Oleo Script';
 }
 
 .banner-subtitle {

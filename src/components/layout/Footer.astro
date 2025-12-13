@@ -36,8 +36,8 @@ if (footerConfig.enable) {
 >
   <div class="transition text-50 text-sm text-center">
     {customFooterHtml && <div class="mb-2" set:html={customFooterHtml} />}
-    &copy; <span id="copyright-year">{currentYear}</span>
-    {profileConfig.name}. All Rights Reserved. /
+    版权所有 &copy; <span id="copyright-year">{currentYear}</span>
+    {profileConfig.name}. /
     <a
       class="transition link text-[var(--primary)] font-medium"
       href={url("rss/")}
@@ -49,7 +49,7 @@ if (footerConfig.enable) {
       target="_blank"
       href={url("sitemap-index.xml")}>Sitemap</a
     ><br />
-    Powered by
+    由
     <a
       class="transition link text-[var(--primary)] font-medium"
       target="_blank"
@@ -59,7 +59,19 @@ if (footerConfig.enable) {
       class="transition link text-[var(--primary)] font-medium"
       target="_blank"
       href="https://github.com/CuteLeaf/Firefly">Firefly</a
-    ><br />
+    >
+    构建，于
+    <a
+      class="transition link text-[var(--primary)] font-medium"
+      target="_blank"
+      href="https://www.netlify.com/">Netlify</a
+    > &
+    <a
+      class="transition link text-[var(--primary)] font-medium"
+      target="_blank"
+      href="https://github.com">GitHub</a
+    >
+    运行<br />
     <!-- 
       注意：请勿随意修改或删除 "Powered by Astro & Firefly" 部分，这是对开源项目的尊重和支持。
       如果您需要在底部增加内容，请在src/config/footerConfig.ts中修改enable属性为true，然后编辑src/config/FooterConfig.html文件。

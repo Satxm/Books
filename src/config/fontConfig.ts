@@ -2,7 +2,7 @@
 export const fontConfig = {
 	enable: true, // 启用自定义字体功能
 	preload: true, // 预加载字体文件以提高性能
-	selected: ["system"], // 当前选择的字体，支持多个字体组合
+	selected: ["inconsolata", "LXGW-WenKai-Screen", "oleo-script"], // 当前选择的字体，支持多个字体组合
 	fonts: {
 		// 系统字体
 		system: {
@@ -43,6 +43,31 @@ export const fontConfig = {
 			name: "MiSans Semibold",
 			src: "https://unpkg.com/misans@4.1.0/lib/Normal/MiSans-Semibold.min.css",
 			family: "MiSans",
+			weight: 600,
+			display: "swap" as const,
+		},
+		// Inconsolata
+		"inconsolata": {
+			id: "inconsolata",
+			name: "Inconsolata",
+			src: "https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap",
+			family: "Inconsolata",
+			display: "swap" as const,
+		},
+		// Oleo Script
+		"oleo-script": {
+			id: "oleo-script",
+			name: "Oleo Script",
+			src: "https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap",
+			family: "Oleo Script",
+			display: "swap" as const,
+		},
+		// LXGW WenKai Screen
+		"LXGW-WenKai-Screen": {
+			id: "LXGW-WenKai-Screen",
+			name: "LXGW WenKai Screen",
+			src: "https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css",
+			family: "LXGW WenKai Screen",
 			weight: 600,
 			display: "swap" as const,
 		},
