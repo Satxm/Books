@@ -1,7 +1,7 @@
 ---
 title: Markdown 扩展功能
-published: 1970-01-01
-updated: 1970-01-01
+published: 2025-1-1 12:00:32
+updated: 2025-1-2 12:00:32
 description: '了解 Firefly 中的 Markdown 功能'
 image: ''
 tags: [演示, 示例, Markdown, Firefly]
@@ -24,21 +24,52 @@ draft: false
 
 支持以下类型的提醒框：`note` `tip` `important` `warning` `caution`
 
+```markdown
 :::note
 突出显示用户应该考虑的信息，即使在快速浏览时也是如此。
 :::
+```
+
+:::note
+突出显示用户应该考虑的信息，即使在快速浏览时也是如此。
+:::
+
+```markdown
+:::tip
+可选信息，帮助用户更成功。
+:::
+
+```
 
 :::tip
 可选信息，帮助用户更成功。
 :::
 
+```markdown
+:::important
+用户成功所必需的关键信息。
+:::
+```
+
 :::important
 用户成功所必需的关键信息。
 :::
 
+```markdown
 :::warning
 由于潜在风险需要用户立即注意的关键内容。
 :::
+```
+
+:::warning
+由于潜在风险需要用户立即注意的关键内容。
+:::
+
+```markdown
+:::caution
+行动的负面潜在后果。
+:::
+```
 
 :::caution
 行动的负面潜在后果。
@@ -91,3 +122,4 @@ draft: false
 
 ```markdown
 内容 :spoiler[被隐藏了 **哈哈**]！
+```

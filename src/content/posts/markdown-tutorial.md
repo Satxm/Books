@@ -1,6 +1,6 @@
 ---
 title: Markdown 教程
-published: 1970-01-01
+published: 2025-1-1 12:00:32
 pinned: false
 description: 一个简明的 Markdown 博客示例。
 tags: [文章示例]
@@ -944,7 +944,10 @@ Code:
     ()  parentheses
     #   hash mark
     +   plus sign
-    -   minus sign (hyphen)
+    −   minus sign
+    -   hyphen
+    —   M dash
+    –   N dash
     .   dot
     !   exclamation mark
 
