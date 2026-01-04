@@ -2,9 +2,9 @@
 title: 时区设置为本地时区
 published: 2025-3-5 18:18:28
 description: '时区设置为本地时区'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

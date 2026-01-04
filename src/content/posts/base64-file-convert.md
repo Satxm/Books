@@ -2,15 +2,15 @@
 title: 文件与 Base64 相互转换
 published: 2025-6-30 20:57:03
 description: '在 Powershell 中实现文件与 Base64 相互转换'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Base64,Powershell,Convert]
+category: 'Powershell'
 draft: false 
 lang: ''
 ---
 # 文件与 Base64 相互转换
 
-```powershell
+```Powershell
 function ConvertTo-Base64 {
     param (
         [Parameter(Mandatory=$true)]

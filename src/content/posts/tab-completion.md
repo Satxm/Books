@@ -2,9 +2,9 @@
 title: 启用 Tab 补全
 published: 2025-3-13 21:56:40
 description: '启用 Tab 补全'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Lunux, bash-completion]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

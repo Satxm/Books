@@ -2,9 +2,9 @@
 title: Daocker 镜像
 published: 2025-3-13 21:56:40
 description: 'Daocker 镜像'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Docker'
 draft: false 
 lang: ''
 ---

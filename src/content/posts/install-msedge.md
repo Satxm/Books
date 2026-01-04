@@ -2,9 +2,9 @@
 title: 安装 MSEdge 浏览器
 published: 2025-3-21 22:05:48
 description: '安装 MSEdge 浏览器'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

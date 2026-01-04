@@ -1,17 +1,17 @@
 ---
-title: PowerShell 创建快捷方式
+title: Powershell 创建快捷方式
 published: 2025-11-30 12:19:34
-description: 'PowerShell 创建快捷方式'
-image: ''
-tags: []
-category: ''
+description: 'Powershell 创建快捷方式'
+image: api
+tags: [Powershell, Shortcut]
+category: 'Powershell'
 draft: false 
 lang: ''
 ---
-# PowerShell 创建快捷方式
+# Powershell 创建快捷方式
 
 
-```powershell
+```Powershell
 
 # 创建一个 名称为 "MyShortcut.lnk" 的快捷方式 打开 UWP 软件 "终端"
 $TargetFile =  "C:\Windows\explorer.exe"

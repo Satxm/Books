@@ -2,9 +2,9 @@
 title: 删除 Gnome 应用
 published: 2025-3-25 09:43:01
 description: '删除 Gnome 应用'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Linux, Gnome]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

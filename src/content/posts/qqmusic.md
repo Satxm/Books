@@ -2,9 +2,9 @@
 title: Linux 解决 QQ 音乐闪退问题
 published: 2025-5-29 22:10:25
 description: '解决 QQ 音乐闪退问题'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Linux,QQ音乐]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

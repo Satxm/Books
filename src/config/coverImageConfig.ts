@@ -18,13 +18,15 @@ import type { CoverImageConfig } from "../types/config";
  */
 export const coverImageConfig: CoverImageConfig = {
 	// 是否在文章详情页显示封面图
-	enableInPost: true,
+	enableInPost: false,
 
 	randomCoverImage: {
 		// 随机封面图功能开关
-		enable: false,
+		enable: true,
 		// 封面图API列表
 		apis: [
+			"https://t.alcy.cc/fj",
+			"https://t.alcy.cc/lai",
 			"https://t.alcy.cc/pc",
 			"https://www.dmoe.cc/random.php",
 			"https://uapis.cn/api/v1/random/image?category=acg&type=pc",
@@ -41,7 +43,7 @@ export const coverImageConfig: CoverImageConfig = {
 			// 加载指示器开关
 			enable: true,
 			// 自定义加载图片路径（相对于 public 目录）
-			image: "/assets/images/loading.gif",
+			image: "/assets/images/catloading.gif",
 			// 加载指示器背景颜色，应与加载图片的背景色一致，避免在暗色模式下显得突兀
 			backgroundColor: "#fefefe",
 		},
@@ -56,7 +58,7 @@ export const coverImageConfig: CoverImageConfig = {
 			// 水印开关
 			enable: true,
 			// 水印文本
-			text: "Random Cover",
+			text: "随机图",
 			/**
 			 * 水印位置
 			 * - "top-left": 左上角

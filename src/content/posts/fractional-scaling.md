@@ -2,9 +2,9 @@
 title: Linux 分数缩放支持
 published: 2025-6-18 08:50:07
 description: '分数缩放支持'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

@@ -2,9 +2,9 @@
 title: Linux 修改语言
 published: 2025-3-13 21:56:40
 description: 'Linux 修改语言'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

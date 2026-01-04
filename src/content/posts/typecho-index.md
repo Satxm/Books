@@ -2,9 +2,9 @@
 title: Typecho 链接去 index.php
 published: 2025-5-29 22:10:25
 description: 'Typecho 链接去 index.php'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Typecho]
+category: 'Typecho'
 draft: false 
 lang: ''
 ---

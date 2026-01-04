@@ -2,9 +2,9 @@
 title: SSH 连接时更换为中文
 published: 2025-4-2 23:02:27
 description: 'SSH 连接时更换为中文'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Linux, ssh]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

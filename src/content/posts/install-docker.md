@@ -2,9 +2,9 @@
 title: 安装 Docker
 published: 2025-3-13 21:56:40
 description: '安装 Docker'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Docker'
 draft: false 
 lang: ''
 ---

@@ -2,9 +2,9 @@
 title: 启用 sudo 权限
 published: 2025-3-13 21:56:40
 description: '启用 sudo 权限'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Lunux, sudo]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

@@ -2,9 +2,9 @@
 title: Gnome 桌面快捷方式相关
 published: 2025-3-21 22:05:48
 description: 'Gnome 桌面快捷方式相关'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Linux,Gnome]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

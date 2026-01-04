@@ -4,6 +4,7 @@ published: 2025-1-1 12:00:32
 tags: [Markdown, 博客, 演示]
 category: 文章示例
 draft: true
+image: api
 ---
 
 # 这篇文章是草稿

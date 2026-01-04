@@ -2,9 +2,9 @@
 title: 安装 Aria2 下载器
 published: 2025-3-5 18:18:28
 description: '安装 Aria2 下载器'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

@@ -6,7 +6,7 @@ description: 在 Firefly 中使用表达性代码的代码块在 Markdown 中的
 tags: [Markdown, Firefly]
 category: 文章示例
 draft: false
-image: api
+image: ./images/firefly3.webp
 ---
 
 在这里，我们将探索如何使用 [Expressive Code](https://expressive-code.com/) 展示代码块。提供的示例基于官方文档，您可以参考以获取更多详细信息。
@@ -128,7 +128,7 @@ echo "此终端框架没有标题"
 
 ---
 
-```powershell title="PowerShell 终端示例"
+```Powershell title="Powershell 终端示例"
 Write-Output "这个有标题!"
 ```
 
@@ -140,7 +140,7 @@ echo "看，没有框架!"
 
 ---
 
-```ps frame="code" title="PowerShell Profile.ps1"
+```ps frame="code" title="Powershell Profile.ps1"
 # 如果不覆盖，这将是一个终端框架
 function Watch-Tail { Get-Content -Tail 20 -Wait $args }
 New-Alias tail Watch-Tail

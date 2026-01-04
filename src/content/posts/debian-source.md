@@ -2,9 +2,9 @@
 title: Debian apt 换源
 published: 2025-2-25 09:43:01
 description: 'Debian apt 换源'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Debian,Sources]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

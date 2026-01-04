@@ -2,9 +2,9 @@
 title: Python pip 换源
 published: 2025-3-5 18:18:28
 description: 'Python pip 换源'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Python, pip]
+category: 'Python'
 draft: false 
 lang: ''
 ---

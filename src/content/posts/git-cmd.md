@@ -2,9 +2,9 @@
 title: Git 命令
 published: 2025-3-5 18:18:28
 description: 'Git 命令'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Git]
+category: 'Git'
 draft: false 
 lang: ''
 ---

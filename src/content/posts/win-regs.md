@@ -1,10 +1,10 @@
 ---
-title: 文件与 Base64 相互转换
+title: Windows 注册表优化
 published: 2025-3-13 21:56:40
-description: '在 Powershell 中实现文件与 Base64 相互转换'
-image: ''
-tags: []
-category: ''
+description: 'Windows 注册表优化'
+image: api
+tags: [Windows, REG]
+category: 'Windows'
 draft: false 
 lang: ''
 ---

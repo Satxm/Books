@@ -2,9 +2,9 @@
 title: Linux 安装中文字体
 published: 2025-3-13 21:56:40
 description: '安装中文字体'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

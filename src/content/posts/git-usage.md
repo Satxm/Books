@@ -2,9 +2,9 @@
 title: Git 设置
 published: 2025-3-13 21:56:40
 description: 'Git 设置'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Git]
+category: 'Git'
 draft: false 
 lang: ''
 ---

@@ -2,7 +2,7 @@
 title: 命令行颜色代码
 published: 2025-11-30 11:40:58
 description: '命令行颜色代码'
-image: ''
+image: api
 tags: []
 category: ''
 draft: false 
@@ -10,7 +10,7 @@ lang: ''
 ---
 # 命令行颜色代码
 
-| 名称 | CMD前景色代码 | CMD背景色代码 | PowerShell | 颜色 |
+| 名称 | CMD前景色代码 | CMD背景色代码 | Powershell | 颜色 |
 | :------: | :------: | :------: | :------: | :------: |
 | 黑 | 30 | 40 | Black | <p style="background: #0C0C0C;color: #0C0C0C">██████</p>|
 | 亮红 | 91 | 101 | Red | <p style="background: #E74856;color: #E74856">██████</p> |
@@ -37,7 +37,7 @@ for %# in (30,91,31,92,32,93,33,94,34,95,35,96,36,37,90,97) do @echo %_esc%[%#m=
 for %# in (40,101,41,102,42,103,43,104,44,105,45,106,46,47,100,107) do @echo %_esc%[%#m===Background with Color %#===%_esc%[0m
 ```
 
-```powershell
+```Powershell
 $Color = @("Black","Red","DarkRed","Green","DarkGreen","Yellow","DarkYellow","Blue","DarkBlue","Magenta","DarkMagenta","Cyan","DarkCyan","Gray","DarkGray","White")
 $Color | ForEach-Object { Write-Host -Fore $_ ===Text with Color $_=== }
 $Color | ForEach-Object { Write-Host -Back $_ ===Background with Color $_=== }

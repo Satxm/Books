@@ -1,10 +1,10 @@
 ---
-title: 文件与 Base64 相互转换
+title: 在登录界面隐藏用户
 published: 2025-3-5 18:18:28
-description: '在 Powershell 中实现文件与 Base64 相互转换'
-image: ''
-tags: []
-category: ''
+description: '在登录界面隐藏用户'
+image: api
+tags: [Windows, SpecialAccounts]
+category: 'Windows'
 draft: false 
 lang: ''
 ---

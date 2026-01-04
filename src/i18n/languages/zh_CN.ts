@@ -6,7 +6,14 @@ export const zh_CN: Translation = {
 	[Key.about]: "关于",
 	[Key.archive]: "归档",
 	[Key.search]: "搜索",
+	[Key.searchNoResults]: "找不到相关结果。",
+	[Key.searchTypeSomething]: "请输入搜索关键词。",
+	[Key.searchLoading]: "正在搜索...",
+	[Key.searchSummary]: "摘要",
+	[Key.searchContent]: "内容",
+	[Key.searchViewMore]: "查看更多结果 ({count} 个更多)",
 	[Key.other]: "其他",
+	[Key.all]: "全部",
 
 	[Key.tags]: "标签",
 	[Key.categories]: "分类",
@@ -201,6 +208,7 @@ export const zh_CN: Translation = {
 	[Key.siteStatsLastUpdate]: "最后活动",
 	[Key.siteStatsDaysAgo]: "{days} 天前",
 	[Key.siteStatsDays]: "{days} 天",
+	[Key.today]: "今天",
 
 	// 日历组件
 	[Key.calendarSunday]: "日",

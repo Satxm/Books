@@ -2,9 +2,9 @@
 title: Office 将编号转换为文本
 published: 2025-11-30 12:19:34
 description: 'Office 将编号转换为文本'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Word,Vba]
+category: 'Word'
 draft: false 
 lang: ''
 ---

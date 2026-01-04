@@ -2,9 +2,9 @@
 title: Ubuntu 删除 Snap 软件包
 published: 2025-3-21 14:54:37
 description: 'Ubuntu 删除 Snap 软件包'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Linux, Ubuntu, Snap]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

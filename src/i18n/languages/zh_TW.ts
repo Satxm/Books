@@ -6,7 +6,14 @@ export const zh_TW: Translation = {
 	[Key.about]: "關於",
 	[Key.archive]: "歸檔",
 	[Key.search]: "搜尋",
+	[Key.searchNoResults]: "找不到相關結果。",
+	[Key.searchTypeSomething]: "請輸入搜尋關鍵字。",
+	[Key.searchLoading]: "搜尋中...",
+	[Key.searchSummary]: "摘要",
+	[Key.searchContent]: "內容",
+	[Key.searchViewMore]: "查看更多結果 ({count} 個更多)",
 	[Key.other]: "其他",
+	[Key.all]: "全部",
 
 	[Key.tags]: "標籤",
 	[Key.categories]: "分類",
@@ -203,6 +210,7 @@ export const zh_TW: Translation = {
 	[Key.siteStatsLastUpdate]: "最後活動",
 	[Key.siteStatsDaysAgo]: "{days} 天前",
 	[Key.siteStatsDays]: "{days} 天",
+	[Key.today]: "今天",
 
 	// 日曆組件
 	[Key.calendarSunday]: "日",

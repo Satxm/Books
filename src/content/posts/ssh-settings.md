@@ -2,9 +2,9 @@
 title: 配置 SSH
 published: 2025-3-6 10:20:02
 description: '配置 SSH'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Linux, ssh]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

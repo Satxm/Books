@@ -2,9 +2,9 @@
 title: 删除右键菜单的 AMD 项目
 published: 2025-3-10 14:40:33
 description: '删除右键菜单的 AMD 项目'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Windows]
+category: 'Windows'
 draft: false 
 lang: ''
 ---

@@ -2,9 +2,9 @@
 title: Linux 修改 tty/ssh 显示信息
 published: 2025-3-22 18:39:11
 description: '修改 tty/ssh 显示信息'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

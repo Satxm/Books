@@ -2,9 +2,9 @@
 title: 修改用户 $HOME 默认目录名
 published: 2025-3-21 14:54:37
 description: '修改用户 $HOME 默认目录名'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Lunux,$HOME]
+category: 'Linux'
 draft: false 
 lang: ''
 ---

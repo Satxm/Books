@@ -2,9 +2,9 @@
 title: 安装 VSCode 编辑器
 published: 2025-3-21 14:54:37
 description: '安装 VSCode 编辑器'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

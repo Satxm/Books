@@ -3,8 +3,10 @@ import type { ProfileConfig } from "../types/config";
 export const profileConfig: ProfileConfig = {
 	// 头像
 	avatar: "/assets/images/avatar.jpg",
+
 	// 名字
 	name: "Satxm",
+
 	// 个人签名
 	bio: "Satxm's Book",
 

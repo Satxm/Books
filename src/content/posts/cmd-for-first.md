@@ -2,7 +2,7 @@
 title: CMD 获取返回值第一个结果
 published: 2025-6-30 20:57:03
 description: 'CMD 获取返回值第一个结果'
-image: ''
+image: api
 tags: []
 category: ''
 draft: false 

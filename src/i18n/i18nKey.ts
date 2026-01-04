@@ -3,6 +3,12 @@ enum I18nKey {
 	about = "about",
 	archive = "archive",
 	search = "search",
+	searchNoResults = "searchNoResults",
+	searchTypeSomething = "searchTypeSomething",
+	searchLoading = "searchLoading",
+	searchSummary = "searchSummary",
+	searchContent = "searchContent",
+	searchViewMore = "searchViewMore",
 	other = "other",
 
 	tags = "tags",
@@ -39,6 +45,7 @@ enum I18nKey {
 	systemMode = "systemMode",
 
 	more = "more",
+	all = "all",
 
 	author = "author",
 	publishedAt = "publishedAt",
@@ -195,6 +202,7 @@ enum I18nKey {
 	siteStatsLastUpdate = "siteStatsLastUpdate",
 	siteStatsDaysAgo = "siteStatsDaysAgo",
 	siteStatsDays = "siteStatsDays",
+	today = "today",
 
 	// 日历组件
 	calendarSunday = "calendarSunday",

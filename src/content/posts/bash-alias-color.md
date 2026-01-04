@@ -2,9 +2,9 @@
 title: 启用命令的别名和颜色
 published: 2025-3-13 21:56:40
 description: '启用命令的别名和颜色'
-image: ''
+image: api
 tags: []
-category: ''
+category: 'Linux'
 draft: false 
 lang: ''
 ---

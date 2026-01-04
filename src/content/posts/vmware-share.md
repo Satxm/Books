@@ -2,9 +2,9 @@
 title: Linux 挂载 VMware 共享文件夹
 published: 2025-6-18 08:33:59
 description: 'Linux 挂载 VMware 共享文件夹'
-image: ''
-tags: []
-category: ''
+image: api
+tags: [Vmware]
+category: 'Software'
 draft: false 
 lang: ''
 ---
