@@ -1,6 +1,6 @@
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import swup from "@swup/astro";
@@ -14,13 +14,14 @@ import katex from "katex";
 import "katex/dist/contrib/mhchem.mjs"; // 加载 mhchem 扩展
 import rehypeSlug from "rehype-slug";
 import remarkDirective from "remark-directive"; /* Handle directives */
-import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import remarkMath from "remark-math";
+import rehypeCallouts from "rehype-callouts";
 import remarkSectionize from "remark-sectionize";
 import { expressiveCodeConfig, siteConfig } from "./src/config";
-import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
-import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
-import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
+import { i18n } from "./src/i18n/translation";
+import I18nKey from "./src/i18n/i18nKey";
+import { pluginLanguageBadge } from "expressive-code-language-badge"; /* Language Badge */
+import { pluginCollapsible } from "expressive-code-collapsible"; /* Collapsible */
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
 import { rehypeMermaid } from "./src/plugins/rehype-mermaid.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
@@ -28,9 +29,10 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import mdx from "@astrojs/mdx";
-import searchIndexer from "./src/integrations/searchIndex.mts";
 import rehypeEmailProtection from "./src/plugins/rehype-email-protection.mjs";
+import rehypeExternalLinks from "./src/plugins/rehype-external-links.mjs";
 import rehypeFigure from "./src/plugins/rehype-figure.mjs";
+import { remarkImageGrid } from "./src/plugins/remark-image-grid.js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,16 +40,27 @@ export default defineConfig({
 
 	base: "/",
 	trailingSlash: "always",
+
+	// 图像优化配置
+	image: {
+		// 全局响应式布局
+		experimentalLayout: "constrained",
+	},
+
 	integrations: [
-		tailwind({
-			nesting: true,
-		}),
 		swup({
 			theme: false,
 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
 			// the default value `transition-` cause transition delay
 			// when the Tailwind class `transition-all` is used
-			containers: ["main"],
+			containers: [
+				"#banner-overlay-container",
+				"#banner-dim-container",
+				"#swup-container",
+				"#left-sidebar-dynamic",
+				"#right-sidebar-dynamic",
+				"#floating-toc-wrapper",
+			],
 			smoothScrolling: false,
 			cache: true,
 			preload: true,
@@ -65,10 +78,11 @@ export default defineConfig({
 		}),
 		icon({
 			include: {
-				"preprocess: vitePreprocess(),": ["*"],
-				"fa6-brands": ["*"],
-				"fa6-regular": ["*"],
-				"fa6-solid": ["*"],
+				"material-symbols": ["*"],
+				"fa7-brands": ["*"],
+				"fa7-regular": ["*"],
+				"fa7-solid": ["*"],
+				"simple-icons": ["*"],
 				mdi: ["*"],
 			},
 		}),
@@ -77,10 +91,30 @@ export default defineConfig({
 			useDarkModeMediaQuery: false,
 			themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
 			plugins: [
+				// pluginLanguageBadge 配置 - 从expressiveCodeConfig读取设置
+				...(expressiveCodeConfig.pluginLanguageBadge?.enable === true
+					? [pluginLanguageBadge()]
+					: []),
 				pluginCollapsibleSections(),
 				pluginLineNumbers(),
-				// pluginLanguageBadge(),
-				pluginCustomCopyButton(),
+				// pluginCollapsible 配置 - 从expressiveCodeConfig读取设置，使用i18n文本
+				...(expressiveCodeConfig.pluginCollapsible?.enable === true
+					? [
+							pluginCollapsible({
+								lineThreshold:
+									expressiveCodeConfig.pluginCollapsible.lineThreshold || 15,
+								previewLines:
+									expressiveCodeConfig.pluginCollapsible.previewLines || 8,
+								defaultCollapsed:
+									expressiveCodeConfig.pluginCollapsible.defaultCollapsed ??
+									true,
+								expandButtonText: i18n(I18nKey.codeCollapsibleShowMore),
+								collapseButtonText: i18n(I18nKey.codeCollapsibleShowLess),
+								expandedAnnouncement: i18n(I18nKey.codeCollapsibleExpanded),
+								collapsedAnnouncement: i18n(I18nKey.codeCollapsibleCollapsed),
+							}),
+						]
+					: []),
 			],
 			defaultProps: {
 				wrap: false,
@@ -102,9 +136,17 @@ export default defineConfig({
 					insHue: 180,
 					markHue: 250,
 				},
+				languageBadge: {
+					fontSize: "0.75rem",
+					fontWeight: "bold",
+					borderRadius: "0.25rem",
+					opacity: "1",
+					borderWidth: "0px",
+					borderColor: "transparent",
+				},
 			},
 			frames: {
-				showCopyToClipboardButton: false,
+				showCopyToClipboardButton: true,
 			},
 		}),
 		svelte(),
@@ -123,19 +165,21 @@ export default defineConfig({
 				if (pathname === "/bangumi/" && !siteConfig.pages.bangumi) {
 					return false;
 				}
+				if (pathname === "/gallery/" && !siteConfig.pages.gallery) {
+					return false;
+				}
 
 				return true;
 			},
 		}),
-		searchIndexer(),
 		mdx(),
 	],
 	markdown: {
 		remarkPlugins: [
 			remarkMath,
 			remarkReadingTime,
+			remarkImageGrid,
 			remarkExcerpt,
-			remarkGithubAdmonitionsToDirectives,
 			remarkDirective,
 			remarkSectionize,
 			parseDirectiveNode,
@@ -143,20 +187,17 @@ export default defineConfig({
 		],
 		rehypePlugins: [
 			[rehypeKatex, { katex }],
+			[rehypeCallouts, { theme: siteConfig.rehypeCallouts.theme }],
 			rehypeSlug,
 			rehypeMermaid,
 			rehypeFigure,
+			[rehypeExternalLinks, { siteUrl: siteConfig.site_url }],
 			[rehypeEmailProtection, { method: "base64" }], // 邮箱保护插件，支持 'base64' 或 'rot13'
 			[
 				rehypeComponents,
 				{
 					components: {
 						github: GithubCardComponent,
-						note: (x, y) => AdmonitionComponent(x, y, "note"),
-						tip: (x, y) => AdmonitionComponent(x, y, "tip"),
-						important: (x, y) => AdmonitionComponent(x, y, "important"),
-						caution: (x, y) => AdmonitionComponent(x, y, "caution"),
-						warning: (x, y) => AdmonitionComponent(x, y, "warning"),
 					},
 				},
 			],
@@ -186,7 +227,19 @@ export default defineConfig({
 		],
 	},
 	vite: {
+		plugins: [tailwindcss()],
+		resolve: {
+			alias: {
+				"@rehype-callouts-theme": `rehype-callouts/theme/${siteConfig.rehypeCallouts.theme}`,
+			},
+		},
 		build: {
+			minify: "esbuild",
+			esbuildOptions: {
+				minify: true,
+				// 移除 console.log 和 debugger
+				drop: ["console", "debugger"], 
+			},
 			rollupOptions: {
 				onwarn(warning, warn) {
 					// temporarily suppress this warning
@@ -199,6 +252,9 @@ export default defineConfig({
 					warn(warning);
 				},
 			},
+			// CSS 优化
+			cssCodeSplit: true,
+			cssMinify: "esbuild",
 		},
 	},
 });

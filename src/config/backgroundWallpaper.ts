@@ -5,7 +5,36 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	mode: "banner",
 	// 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
 	switchable: true,
-	// 背景图片配置
+	/**
+	 * 背景图片配置
+	 * 图片路径支持三种格式：
+	 * 1. public 目录（以 "/" 开头，不优化）："/assets/images/banner.avif"
+	 * 2. src 目录（不以 "/" 开头，自动优化但会增加构建时间，推荐）："assets/images/banner.avif"
+	 * 3. 远程 URL："https://example.com/banner.jpg"
+	 * 注意：远程URL和public目录的图片不会被优化，请确保图片体积足够小以免影响加载速度
+	 *
+	 * 建议不要替换d1-d6，m1-m6这些默认示例图片，但你可以删除掉节省空间
+	 * 因为以后可能会更换示例图片，导致你自定义的图片被覆盖
+	 * 所以建议使用自己的图片的时候命名为其他名称，不要使用d1-d6，m1-m6这些名称
+	 *
+	 * 如果只使用一张图片或者使用随机图API，推荐直接使用字符串格式：
+	 * desktop: "https://t.alcy.cc/pc",   // 随机图API
+	 * desktop: "assets/images/DesktopWallpaper/d1.avif", // 单张图片
+	 *
+	 * mobile: "https://t.alcy.cc/mp", // 随机图API
+	 * mobile: "assets/images/MobileWallpaper/m1.avif", // 单张图片
+	 *
+	 * 支持配置多张图片（数组），每次刷新页面随机显示一张：
+	 * desktop: [
+	 * "assets/images/DesktopWallpaper/d1.avif",
+	 * "assets/images/DesktopWallpaper/d2.avif",
+	 * ],
+	 *
+	 * mobile:[
+	 *   "assets/images/MobileWallpaper/m1.avif",
+	 *   "assets/images/MobileWallpaper/m2.avif",
+	 * ],
+	 */
 	src: {
 		// 桌面背景图片
 		desktop: "/assets/images/background.jpg",
@@ -23,14 +52,20 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		homeText: {
 			// 是否启用主页横幅文字
 			enable: true,
+			// 是否允许用户通过控制面板切换横幅标题显示
+			switchable: true,
 			// 主页横幅主标题
 			title: "Satxm's Books",
+			// 主页横幅主标题字体大小
+			titleSize: "3.8rem",
 			// 主页横幅副标题
 			subtitle: [
 					"📖 我们一路奋战，不是为了改变世界，而是为了不让世界改变我们。",
 					"🧊 为什么要担心？如果努力了，担心不会让结果变得更好。",
 					"📝 很多事情犹如天气，慢慢热或是渐渐冷，等到惊悟的时候，已过了一季。",
 			],
+			// 主页横幅副标题字体大小
+			subtitleSize: "1.5rem",
 			typewriter: {
 				// 是否启用打字机效果
 				// 打字机开启 → 循环显示所有副标题
@@ -60,44 +95,47 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			},
 			url: {
 				// 桌面端原始艺术品或艺术家页面的 URL 链接
-				desktop: "https://www.pixiv.net/artworks/135490046",
+				desktop: "https://www.pixiv.net/users/108801776",
 				// 移动端原始艺术品或艺术家页面的 URL 链接
 				mobile: "https://www.pixiv.net/users/42715864",
 			},
 		},
 		// 横幅导航栏配置
 		navbar: {
-			// 横幅导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
+			// 横幅导航栏透明模式："semi" 半透明，"full" 完全透明，"semifull" 动态透明
 			transparentMode: "semifull",
+			// 是否开启毛玻璃模糊效果，开启可能会影响页面性能，如果不开启则是半透明，请根据自己的喜好开启
+			enableBlur: true,
+			// 毛玻璃模糊度
+			blur: 3,
 		},
-		// 波浪动画效果配置，开启可能会影响页面性能，请根据实际情况开启
+		// 水波纹动画效果配置，开启会影响页面性能，请根据自己的喜好开启
 		waves: {
 			enable: {
-				// 桌面端是否启用波浪动画效果
+				// 桌面端是否启用水波纹动画效果
 				desktop: true,
-				// 移动端是否启用波浪动画效果
+				// 移动端是否启用水波纹动画效果
 				mobile: true,
 			},
-			performance: {
-				// 性能优化说明：
-				// quality: "high" - 最佳视觉效果，但GPU占用较高，适合高性能设备
-				// quality: "medium" - 平衡性能和质量，适合中等性能设备
-				// quality: "low" - 最低GPU占用，动画更简单，适合低性能设备
-				// hardwareAcceleration: true - 启用GPU加速，提升性能但增加GPU占用
-				// hardwareAcceleration: false - 禁用GPU加速，降低GPU占用但可能影响性能
-				quality: "high",
-				// 是否启用硬件加速
-				hardwareAcceleration: true,
-			},
+			// 是否允许用户通过控制面板切换水波纹动画
+			switchable: true,
 		},
 	},
 	// 全屏透明覆盖模式特有配置
 	overlay: {
+		// 是否允许用户通过控制面板调整全屏透明模式参数
+		switchable: {
+			opacity: true,
+			blur: true,
+			cardOpacity: true,
+		},
 		// 层级，确保壁纸在背景层
 		zIndex: -1,
 		// 壁纸透明度
 		opacity: 0.8,
-		// 背景模糊程度
-		blur: 1,
+		// 背景模糊度
+		blur: 10,
+		// 卡片透明度，0-1之间，值越小越透明
+		cardOpacity: 0.5,
 	},
 };

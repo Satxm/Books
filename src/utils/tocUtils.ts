@@ -41,18 +41,20 @@ export class TOCManager {
 	/**
 	 * 查找所有标题
 	 */
-	private getAllHeadings(): NodeListOf<HTMLElement> {
+	private getAllHeadings(): HTMLElement[] {
 		const contentContainer = this.getContentContainer();
-		if (contentContainer) {
-			return contentContainer.querySelectorAll("h1, h2, h3, h4, h5, h6");
+		if (!contentContainer) {
+			return [];
 		}
-		return document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+		return Array.from(
+			contentContainer.querySelectorAll("h1, h2, h3, h4, h5, h6"),
+		);
 	}
 
 	/**
 	 * 计算最小深度
 	 */
-	private calculateMinDepth(headings: NodeListOf<HTMLElement>): number {
+	private calculateMinDepth(headings: HTMLElement[]): number {
 		let minDepth = 10;
 		headings.forEach((heading) => {
 			const depth = Number.parseInt(heading.tagName.charAt(1), 10);
@@ -64,11 +66,22 @@ export class TOCManager {
 	/**
 	 * 过滤标题
 	 */
-	private filterHeadings(headings: NodeListOf<HTMLElement>): HTMLElement[] {
+	private filterHeadings(headings: HTMLElement[]): HTMLElement[] {
 		return Array.from(headings).filter((heading) => {
 			const depth = Number.parseInt(heading.tagName.charAt(1), 10);
 			return depth < this.minDepth + this.maxLevel;
 		});
+	}
+
+	/**
+	 * 获取标题的纯文本内容（排除 script/style 标签的文本）
+	 */
+	private getCleanTextContent(element: HTMLElement): string {
+		const clone = element.cloneNode(true) as HTMLElement;
+		for (const el of clone.querySelectorAll("script, style")) {
+			el.remove();
+		}
+		return clone.textContent || "";
 	}
 
 	/**
@@ -79,9 +92,9 @@ export class TOCManager {
 			return heading1Count.toString();
 		}
 		if (depth === this.minDepth + 1) {
-			return '<div class="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div>';
+			return '<div class="transition w-2 h-2 rounded-[0.1875rem] bg-(--toc-badge-bg)"></div>';
 		}
-		return '<div class="transition w-1.5 h-1.5 rounded-sm bg-black/5 dark:bg-white/10"></div>';
+		return '<div class="transition w-1.5 h-1.5 rounded-xs bg-black/5 dark:bg-white/10"></div>';
 	}
 
 	/**
@@ -122,15 +135,38 @@ export class TOCManager {
 				heading1Count++;
 			}
 
-			const headingText = (heading.textContent || "").replace(/#+\s*$/, "");
+			let headingText = this.getCleanTextContent(heading)
+				.replace(/#+\s*$/, "")
+				.trim();
+
+			// Fallback for empty text (e.g. dynamic subtitle)
+			if (!headingText) {
+				const dataSubtitles = heading.getAttribute("data-subtitles");
+				if (dataSubtitles) {
+					try {
+						const subtitles = JSON.parse(dataSubtitles);
+						headingText = Array.isArray(subtitles) ? subtitles[0] : subtitles;
+					} catch {
+						// ignore
+					}
+				}
+			}
+
+			if (!headingText) {
+				headingText =
+					heading.id === "banner-subtitle"
+						? "Banner Subtitle"
+						: heading.id || "Heading";
+			}
 
 			tocHTML += `
         <a 
           href="#${heading.id}" 
-          class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2 ${depthClass}"
+          class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl hover:bg-(--toc-btn-hover) active:bg-(--toc-btn-active) py-2 ${depthClass}"
           data-heading-id="${heading.id}"
+          aria-label="${headingText}"
         >
-          <div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ${depth === this.minDepth ? "bg-[var(--toc-badge-bg)] text-[var(--btn-content)]" : ""}">
+          <div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ${depth === this.minDepth ? "bg-(--toc-badge-bg) text-(--btn-content)" : ""}">
             ${badgeContent}
           </div>
           <div class="transition text-sm ${depth <= this.minDepth + 1 ? "text-50" : "text-30"} flex-1 min-w-0 overflow-hidden text-ellipsis whitespace-nowrap">${headingText}</div>
@@ -138,7 +174,7 @@ export class TOCManager {
       `;
 		});
 
-		tocHTML += `<div id="${this.indicatorId}" style="opacity: 0;" class="-z-10 absolute bg-[var(--toc-btn-hover)] left-0 right-0 rounded-xl transition-all"></div>`;
+		tocHTML += `<div id="${this.indicatorId}" style="opacity: 0;" class="-z-10 absolute bg-(--toc-btn-hover) left-0 right-0 rounded-xl transition-all"></div>`;
 
 		return tocHTML;
 	}

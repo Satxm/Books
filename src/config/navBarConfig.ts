@@ -18,30 +18,6 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		LinkPreset.Archive,
 	];
 
-	// 支持自定义导航栏链接,并且支持多级菜单
-	links.push({
-		name: "链接",
-		url: "/links/",
-		icon: "material-symbols:link",
-
-		// 子菜单
-		children: [
-			{
-				name: "GitHub",
-				url: "https://github.com/Satxm",
-				external: true,
-				icon: "fa6-brands:github",
-			},
-			{
-				name: "Bilibili",
-				url: "https://space.bilibili.com/350697357",
-				external: true,
-				icon: "fa6-brands:bilibili",
-			},
-		],
-	});
-
-
 	// 根据配置决定是否添加友链页面
 	if (siteConfig.pages.friends) {
 		links.push(LinkPreset.Friends);
@@ -51,6 +27,20 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	if (siteConfig.pages.guestbook) {
 		links.push(LinkPreset.Guestbook);
 	}
+
+	// 我的及其子菜单
+	// links.push({
+	// 	name: "我的",
+	// 	url: "/my/",
+	// 	icon: "material-symbols:person",
+	// 	children: [
+	// 		// 根据配置决定是否添加相册，在siteConfig关闭pages.gallery时导航栏不显示相册
+	// 		...(siteConfig.pages.gallery ? [LinkPreset.Gallery] : []),
+
+	// 		// 根据配置决定是否添加番组计划，在siteConfig关闭pages.bangumi时导航栏不显示番组计划
+	// 		...(siteConfig.pages.bangumi ? [LinkPreset.Bangumi] : []),
+	// 	],
+	// });
 
 	// 关于及其子菜单
 	/*
@@ -64,12 +54,32 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 			// 关于页面
 			LinkPreset.About,
-
-			// 根据配置决定是否添加番组计划，在siteConfig关闭pages.bangumi时导航栏不显示番组计划
-			...(siteConfig.pages.bangumi ? [LinkPreset.Bangumi] : []),
 		],
 	});
 	*/
+
+	// 支持自定义导航栏链接,并且支持多级菜单
+	links.push({
+		name: "链接",
+		url: "/links/",
+		icon: "material-symbols:link",
+
+		// 子菜单
+		children: [
+			{
+				name: "GitHub",
+				url: "https://github.com/Satxm",
+				external: true,
+				icon: "fa7-brands:github",
+			},
+			{
+				name: "Bilibili",
+				url: "https://space.bilibili.com/350697357",
+				external: true,
+				icon: "fa7-brands:bilibili",
+			},
+		],
+	});
 
 	// 仅返回链接，其它导航搜索相关配置在模块顶层常量中独立导出
 	return { links } as NavBarConfig;
@@ -77,20 +87,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 // 导航搜索配置
 export const navBarSearchConfig: NavBarSearchConfig = {
-	// 可选：PageFind， MeiliSearch
-	// 选择PageFind时：NavBarSearchMethod.PageFind,
-	// 选择MeiliSearch时：NavBarSearchMethod.MeiliSearch,
 	method: NavBarSearchMethod.PageFind,
-
-	// 当选择 MeiliSearch 时的配置
-	meiliSearchConfig: {
-		INDEX_NAME: "posts",
-		CONTENT_DIR: "src/content/posts",
-		MEILI_HOST: "http://localhost:7700",
-		PUBLIC_MEILI_HOST: "http://localhost:7700",
-		PUBLIC_MEILI_SEARCH_KEY:
-			"41134b15079da66ca545375edbea848a9b7173dff13be2028318fefa41ae8f2b",
-	},
 };
 
 export const navBarConfig: NavBarConfig = getDynamicNavBarConfig();

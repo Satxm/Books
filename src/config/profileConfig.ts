@@ -2,6 +2,10 @@ import type { ProfileConfig } from "../types/config";
 
 export const profileConfig: ProfileConfig = {
 	// 头像
+	// 图片路径支持三种格式：
+	// 1. public 目录（以 "/" 开头，不优化）："/assets/images/avatar.webp"
+	// 2. src 目录（不以 "/" 开头，自动优化但会增加构建时间，推荐）："assets/images/avatar.jpg"
+	// 3. 远程 URL："https://example.com/avatar.jpg"
 	avatar: "/assets/images/avatar.jpg",
 
 	// 名字
@@ -11,7 +15,7 @@ export const profileConfig: ProfileConfig = {
 	bio: "Satxm's Book",
 
 	// 链接配置
-	// 已经预装的图标集：fa6-brands，fa6-regular，fa6-solid，material-symbols，simple-icons
+	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
 	// 访问https://icones.js.org/ 获取图标代码，
 	// 如果想使用尚未包含相应的图标集，则需要安装它
 	// `pnpm add @iconify-json/<icon-set-name>`
@@ -19,25 +23,25 @@ export const profileConfig: ProfileConfig = {
 	links: [
 		{
 			name: "Bilibli",
-			icon: "fa6-brands:bilibili",
+			icon: "fa7-brands:bilibili",
 			url: "https://space.bilibili.com/350697357",
 			showName: false,
 		},
 		{
 			name: "GitHub",
-			icon: "fa6-brands:github",
+			icon: "fa7-brands:github",
 			url: "https://github.com/Satxm",
 			showName: false,
 		},
 		{
 			name: "Email",
-			icon: "fa6-solid:envelope",
+			icon: "fa7-solid:envelope",
 			url: "mailto:Satxm@outlook.com",
 			showName: false,
 		},
 		{
 			name: "RSS",
-			icon: "fa6-solid:rss",
+			icon: "fa7-solid:rss",
 			url: "/rss/",
 			showName: false,
 		},

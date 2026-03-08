@@ -20,6 +20,25 @@ export const en: Translation = {
 	[Key.recentPosts]: "Recent Posts",
 	[Key.postList]: "Post List",
 	[Key.tableOfContents]: "Table of Contents",
+	[Key.music]: "Music",
+	[Key.musicNoPlaying]: "No playing",
+	[Key.musicLyrics]: "Lyrics",
+	[Key.musicVolume]: "Volume",
+	[Key.musicPlayMode]: "Switch Play Mode",
+	[Key.musicPrev]: "Previous",
+	[Key.musicNext]: "Next",
+	[Key.musicPlaylist]: "Playlist",
+	[Key.musicNoLyrics]: "No lyrics available",
+	[Key.musicLoadingLyrics]: "Loading lyrics...",
+	[Key.musicFailedLyrics]: "Failed to load lyrics",
+	[Key.musicNoSongs]: "No songs",
+	[Key.musicError]: "Player Error",
+	[Key.musicPlay]: "Play",
+	[Key.musicPause]: "Pause",
+	[Key.musicProgress]: "Playback Progress",
+	[Key.musicCover]: "Cover",
+	[Key.musicNoCover]: "No cover available",
+	[Key.musicAudioPlayer]: "Audio Player",
 
 	// Announcement
 	[Key.announcement]: "Announcement",
@@ -58,6 +77,8 @@ export const en: Translation = {
 
 	[Key.author]: "Author",
 	[Key.publishedAt]: "Published at",
+	[Key.updatedAt]: "Updated at",
+	[Key.readTime]: "Read time",
 	[Key.license]: "License",
 	[Key.bangumi]: "Bangumi",
 
@@ -179,11 +200,34 @@ export const en: Translation = {
 	// Pinned
 	[Key.pinned]: "Pinned",
 
+	// Related Posts
+	[Key.relatedPosts]: "Related Posts",
+	[Key.randomPosts]: "Random Posts",
+	[Key.smartRecommend]: "Smart",
+	[Key.randomRecommend]: "Random",
+
+	// Encrypted
+	[Key.postEncrypted]: "This post is encrypted",
+
 	// Wallpaper Mode
 	[Key.wallpaperMode]: "Wallpaper Mode",
 	[Key.wallpaperBannerMode]: "Banner Wallpaper",
-	[Key.wallpaperOverlayMode]: "Transparent",
-	[Key.wallpaperNoneMode]: "Solid Color Background",
+	[Key.wallpaperOverlayMode]: "Overlay Wallpaper",
+	[Key.wallpaperNoneMode]: "None Wallpaper",
+
+	// Banner Settings
+	[Key.bannerSettings]: "Banner Settings",
+	[Key.bannerTitle]: "Home Banner Title",
+	[Key.wavesAnimation]: "Waves Animation",
+	[Key.overlaySettings]: "Transparency Settings",
+	[Key.overlayOpacity]: "Wallpaper Opacity",
+	[Key.overlayBlur]: "Background Blur",
+	[Key.overlayCardOpacity]: "Card Opacity",
+
+	// Post List Layout
+	[Key.postListLayout]: "Post List Layout",
+	[Key.postListLayoutList]: "List",
+	[Key.postListLayoutGrid]: "Grid",
 
 	// Sponsor Page
 	[Key.sponsor]: "Sponsor",
@@ -203,7 +247,7 @@ export const en: Translation = {
 	[Key.sponsorButtonText]:
 		"If this article helped you, please share or support!",
 
-	[Key.shareOnSocial]: "Share",
+	[Key.shareOnSocial]: "Share Article",
 	[Key.shareOnSocialDescription]:
 		"If this article helped you, please share it with others!",
 
@@ -246,4 +290,29 @@ export const en: Translation = {
 	[Key.copyLink]: "Copy Link",
 	[Key.savePoster]: "Save Poster",
 	[Key.scanToRead]: "Scan to Read",
+
+	// Code Block Collapsible Configuration
+	[Key.codeCollapsibleShowMore]: "Show more",
+	[Key.codeCollapsibleShowLess]: "Show less",
+	[Key.codeCollapsibleExpanded]: "Code block expanded",
+	[Key.codeCollapsibleCollapsed]: "Code block collapsed",
+
+	// Gallery Page
+	[Key.gallery]: "Gallery",
+	[Key.galleryDescription]: "Capturing beautiful moments in life",
+	[Key.galleryPhotos]: "photos",
+	[Key.galleryAlbums]: "albums",
+	[Key.galleryNoAlbums]: "No albums yet",
+	[Key.galleryBackToAlbums]: "Back to albums",
+
+	// Password Protection
+	[Key.passwordProtected]: "Password Protected",
+	[Key.passwordProtectedDesc]:
+		"This article is password protected. Please enter the password to view the content.",
+	[Key.passwordHint]: "Hint",
+	[Key.passwordPlaceholder]: "Enter password",
+	[Key.passwordSubmit]: "Unlock",
+	[Key.passwordError]: "Incorrect password, please try again.",
+	[Key.passwordProtectedRss]:
+		"This article is encrypted. Please visit the website to view it.",
 };
