@@ -4,7 +4,7 @@ published: 2025-7-1 13:09:56
 description: '恢复 Windows 11 经典资源管理器和右键菜单'
 image: api
 tags: []
-category: ''
+category: 'Windows'
 draft: false 
 lang: ''
 ---

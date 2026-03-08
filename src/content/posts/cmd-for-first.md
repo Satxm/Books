@@ -4,7 +4,7 @@ published: 2025-6-30 20:57:03
 description: 'CMD 获取返回值第一个结果'
 image: api
 tags: []
-category: ''
+category: 'Windows'
 draft: false 
 lang: ''
 ---
