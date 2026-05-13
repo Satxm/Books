@@ -189,7 +189,7 @@ usb_xhci:1.fileName = "virt-usb-key2.vmdk"
 | `usb.restrictions.defaultAllow` | **解除连接限制**<br>允许 USB 设备在未手动确认的情况下自动连接。 | `"TRUE"`<br>新版 VMware 解决 USB 设备“连不上”或“需手动点击”的必备参数。 |
 
 ### USB 速度值对照表
-| 十进制值 | | 对应的 USB 标准 |
+| 十进制值 | 十六进制值 | 对应的 USB 标准 |
 | :--- | :--- | :--- |
 | 1 | 0x1 | USB 1.0/1.1 (1.5 Mbps) |
 | 2 | 0x2 | USB 1.1 (12 Mbps) |
@@ -199,4 +199,4 @@ usb_xhci:1.fileName = "virt-usb-key2.vmdk"
 | 64 | 0x40 | USB 3.2 Gen 2x2 (20 Gbps) |
 
 
-https://blog.csdn.net/weixin_43657424/article/details/160217204
+参考链接 https://blog.csdn.net/weixin_43657424/article/details/160217204
