@@ -132,10 +132,10 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 层级，确保壁纸在背景层
 		zIndex: -1,
 		// 壁纸透明度
-		opacity: 0.8,
+		opacity: 0.9,
 		// 背景模糊度
-		blur: 10,
+		blur: 0.5,
 		// 卡片透明度，0-1之间，值越小越透明
-		cardOpacity: 0.5,
+		cardOpacity: 0.64,
 	},
 };
