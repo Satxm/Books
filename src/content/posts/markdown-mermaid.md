@@ -8,7 +8,7 @@ category: 文章示例
 draft: false
 image: api
 ---
-# Markdown 中 Mermaid 图表完整指南
+## Markdown 中 Mermaid 图表完整指南
 
 本文演示如何在 Markdown 文档中使用 Mermaid 创建各种复杂图表，包括流程图、时序图、甘特图、类图和状态图。
 
