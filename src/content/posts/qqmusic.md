@@ -35,13 +35,13 @@ sudo sed -i -e 's/Name=qqmusic/Name=QQMusic\nName[zh_CN]=QQ音乐/' -e '/^Exec/s
 `qqmusic.desktop` 文件内容
 
 ```v title="/usr/share/applications/qqmusic.desktop"
-[Desktop Entry]
-Name=qqmusic // [!code --]
-Name=QQMusic // [!code ++]
-Name[zh_CN]=QQ音乐 // [!code ++]
-Exec=/opt/qqmusic/qqmusic %U // [!code --]
-Exec=/opt/qqmusic/qqmusic %U --no-sandbox // [!code ++]
-Terminal=false
+  [Desktop Entry]
+- Name=qqmusic
+- Exec=/opt/qqmusic/qqmusic %U
++ Name=QQMusic
++ Name[zh_CN]=QQ音乐
++ Exec=/opt/qqmusic/qqmusic %U --no-sandbox
+  Terminal=false
 ```
 
 :::tip[说明]

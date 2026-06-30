@@ -50,11 +50,11 @@ fi
 如果上述设置无效，检查 `~/.profile ` 文件，删掉末尾这几行后再重新登录，能正常显示中文了。
 
 ```v
-# Installed by Debian Installer:" // [!code --]
-#  no localization for root because zh_CN.UTF-8" // [!code --]
-#  cannot be properly displayed at the Linux console" // [!code --]
-LANG=C // [!code --]
-LANGUAGE=C // [!code --]
+- # Installed by Debian Installer:"
+- #  no localization for root because zh_CN.UTF-8"
+- #  cannot be properly displayed at the Linux console"
+- LANG=C
+- LANGUAGE=C
 ```
 
 ## Ubuntu
