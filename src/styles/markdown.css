@@ -52,10 +52,8 @@
   code {
     @apply bg-(--inline-code-bg) text-(--inline-code-color) px-1 py-0.5 rounded-md overflow-hidden;
 
-    font-family: 
-      "Inconsolata",
-      "LXGW WenKai Screen",
-      "JetBrains Mono Variable",
+    font-family:
+      var(--font-inconsolata),
       ui-monospace,
       SFMono-Regular,
       Menlo,

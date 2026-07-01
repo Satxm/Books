@@ -47,13 +47,13 @@ Virtual disk creation successful.
 
 ## 步骤 2：编辑虚拟机配置文件（.vmx）
 
-> [!IMPORTANT] ⚠️ 重要
+> [!IMPORTANT] 重要
 > 确保目标虚拟机完全关闭（不是挂起状态）。
 
 找到虚拟机目录下的 .vmx 文件（例如 Windows 10.vmx），用记事本打开并添加以下配置：
 
 ### 使用 USB 2.0（EHCI）
-```ymal
+```
 # 启用 USB 2.0 控制器（EHCI）
 ehci.present = "TRUE"
 ehci.pciSlotNumber = "34"
@@ -111,7 +111,7 @@ usb.restrictions.defaultAllow = "TRUE"
 
 完成格式化
 
-> [!TIP] 💡提示
+> [!TIP] 提示
 格式化完成后，虚拟USB盘即可像普通U盘一样使用，支持文件复制、软件安装、甚至制作启动盘。
 
 ## 进阶配置
