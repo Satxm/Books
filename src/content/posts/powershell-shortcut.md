@@ -11,7 +11,7 @@ lang: ''
 # Powershell 创建快捷方式
 
 
-```Powershell
+```powershell
 
 # 创建一个 名称为 "MyShortcut.lnk" 的快捷方式 打开 UWP 软件 "终端"
 $TargetFile =  "C:\Windows\explorer.exe"

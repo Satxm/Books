@@ -1,13 +1,14 @@
 ---
-title: Word EQ 域 示例
-published: 2026-7-2 18:05:59
+title: Word 中的 EQ 域实操
+published: 2026-07-02 18:05:59
 description: 'Word EQ 域 示例'
 image: api
 tags: [Word, EQ域]
 category: 'Word'
-draft: true
+draft: false
 lang: ''
 ---
+
 EQ 域是 Word 中一个非常强大的功能，主要用于在文档中创建复杂的数学公式和方程，尤其是在不方便使用公式编辑器的场景下。
 
 ## 📝 什么是 EQ 域？

@@ -1,30 +1,49 @@
 ---
-title: Debian apt 换源
+title: Debian 系统软件源更换指南
 published: 2025-2-25 09:43:01
-description: 'Debian apt 换源'
+description: 'Debian 系统软件源更换指南'
 image: api
 tags: [Debian,Sources]
 category: 'Linux'
 draft: false 
 lang: ''
 ---
-# Debian apt 换源
+
+本指南将帮助您将 Debian 系统的默认软件源更换为国内镜像源，以提升软件包下载速度。
 
 ## 使用说明
 
 :::warning[警告]
 
 **操作前请做好相应备份。**
+
+- 备份源文件：在修改任何系统文件前，强烈建议您先进行备份，以便在出现问题时能够快速恢复。
+
+```bash
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo cp -r /etc/apt/sources.list.d /etc/apt/sources.list.d.bak
+```
+
+- 确认系统版本：请确保您使用的源配置与您的 Debian 系统版本（代号）相匹配。您可以使用以下命令查看：
+
+```bash
+lsb_release -c
+# 或
+cat /etc/os-release
+```
 :::
+
+## 自动化替换方法
 
 一般情况下，将 `/etc/apt/sources.list` 或 `/etc/apt/sources.list.d/debian.sources` 文件中 Debian 默认的源地址 `http://deb.debian.org/` 替换为 `http://mirrors.ustc.edu.cn` 即可。
 
 可以使用如下命令：
 
-
-
 ```bash title="sources.list 格式"
-sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+# 替换主源
+sudo sed -i 's|http://deb.debian.org|http://mirrors.ustc.edu.cn|g' /etc/apt/sources.list
+
+# 替换安全更新源
 sudo sed -i -e 's|security.debian.org/\? |security.debian.org/debian-security |g' \
       -e 's|security.debian.org|mirrors.ustc.edu.cn|g' \
       -e 's|deb.debian.org/debian-security|mirrors.ustc.edu.cn/debian-security|g' \
@@ -32,7 +51,14 @@ sudo sed -i -e 's|security.debian.org/\? |security.debian.org/debian-security |g
 ```
 
 ```bash title="DEB822 格式"
-sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
+# 替换主源
+sudo sed -i 's|http://deb.debian.org|http://mirrors.ustc.edu.cn|g' /etc/apt/sources.list.d/debian.sources
+
+# 替换安全更新源
+sudo sed -i -e 's|security.debian.org/\? |security.debian.org/debian-security |g' \
+      -e 's|security.debian.org|mirrors.ustc.edu.cn|g' \
+      -e 's|deb.debian.org/debian-security|mirrors.ustc.edu.cn/debian-security|g' \
+      /etc/apt/sources.list.d/debian.sources
 ```
 
 目前使用 DEB822 格式的 Debian 分发仅有容器镜像，且其安全更新源默认设置为 `http://deb.debian.org/debian-security`，因此以上命令会同时替换 Debian 官方源和安全更新源。
