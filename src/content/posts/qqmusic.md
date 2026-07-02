@@ -34,16 +34,17 @@ sudo sed -i -e 's/Name=qqmusic/Name=QQMusic\nName[zh_CN]=QQ音乐/' -e '/^Exec/s
 
 `qqmusic.desktop` 文件内容
 
-```v title="/usr/share/applications/qqmusic.desktop"
-  [Desktop Entry]
-- Name=qqmusic
-- Exec=/opt/qqmusic/qqmusic %U
-+ Name=QQMusic
-+ Name[zh_CN]=QQ音乐
-+ Exec=/opt/qqmusic/qqmusic %U --no-sandbox
-  Terminal=false
+```v title="/usr/share/applications/qqmusic.desktop" del={2-3} ins={4-7}
+[Desktop Entry]
+Name=qqmusic
+Exec=/opt/qqmusic/qqmusic %U
+Name=QQMusic
+Name[zh_CN]=QQ音乐
+Exec=/opt/qqmusic/qqmusic %U --no-sandbox
+Terminal=false
 ```
 
 :::tip[说明]
-`Name=QQ Music` `Name[zh_CN]=QQ音乐` 修改快捷方式显示名称
+- `Name=QQ Music` 修改快捷方式显示名称
+- `Name[zh_CN]=QQ音乐` 修改中文时快捷方式显示名称
 :::

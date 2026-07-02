@@ -8,7 +8,7 @@ category: 'Software'
 draft: false 
 lang: ''
 ---
-# 挂载 VMware 共享文件夹
+本文档详细说明了如何在 Linux 虚拟机中挂载 VMware 的共享文件夹，实现主机与虚拟机之间的文件便捷共享。
 
 ## ​启用 VMware 共享文件夹（主机操作）​​
 

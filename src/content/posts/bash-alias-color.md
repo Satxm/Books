@@ -1,5 +1,5 @@
 ---
-title: 启用命令别名与彩色输出
+title: Linux 启用命令别名与彩色输出
 published: 2025-3-13 21:56:40
 description: '启用命令别名与彩色输出'
 image: api
@@ -33,14 +33,14 @@ vim ~/.bashrc
 
 找到文件中关于 ls 别名的部分。默认情况下，这些行通常被注释掉了。我们需要取消注释以激活它们。
 
-```vim
-  # some more ls aliases
-- #alias ll='ls -l'
-- #alias la='ls -A'
-- #alias l='ls -CF'
-+ alias ll='ls -l'
-+ alias la='ls -A'
-+ alias l='ls -CF'
+```vim del={2-4} ins={5-8}
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
 ```
 别名说明：
 
@@ -56,45 +56,45 @@ vim ~/.bashrc
 
 如果您是 root 用户，请找到并修改以下部分，取消相关行的注释：
 
-```vim
-  # You may uncomment the following lines if you want `ls' to be colorized:
-- # export LS_OPTIONS='--color=auto'
-- # eval "`dircolors`"
-- # alias ls='ls $LS_OPTIONS'
-- # alias ll='ls $LS_OPTIONS -l'
-- # alias l='ls $LS_OPTIONS -lA'
-+ export LS_OPTIONS='--color=auto'
-+ eval "`dircolors`"
-+ alias ls='ls $LS_OPTIONS'
-+ alias ll='ls $LS_OPTIONS -l'
-+ alias l='ls $LS_OPTIONS -lA'
+```vim del={2-6} ins={7-11}
+# You may uncomment the following lines if you want `ls' to be colorized:
+# export LS_OPTIONS='--color=auto'
+# eval "`dircolors`"
+# alias ls='ls $LS_OPTIONS'
+# alias ll='ls $LS_OPTIONS -l'
+# alias l='ls $LS_OPTIONS -lA'
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
 ```
 
 ### 👤 普通用户配置
 
 对于普通用户，配置通常在 if [ -x /usr/bin/dircolors ]; then 代码块内。请确保取消以下别名的注释：
 
-```vim
-  # enable color support of ls and also add handy aliases
-  if [ -x /usr/bin/dircolors ]; then
-      test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-      alias ls='ls --color=auto'
--     #alias dir='dir --color=auto'
--     #alias vdir='vdir --color=auto'
-+     alias dir='dir --color=auto'
-+     alias vdir='vdir --color=auto'
+```vim del={5-6,10-12,19} ins={7-8,13-15,20}
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
--     #alias grep='grep --color=auto'
--     #alias fgrep='fgrep --color=auto'
--     #alias egrep='egrep --color=auto'
-+     alias grep='grep --color=auto'
-+     alias fgrep='fgrep --color=auto'
-+     alias egrep='egrep --color=auto'
-  fi
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
-  # colored GCC warnings and errors
-- #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-+ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 ```
 颜色配置说明：
 
